@@ -1,0 +1,53 @@
+title: Norwegian Digital Signature System
+description: The Norwegian Digital Signature System (DSS) is a secure electronic authentication framework that enables seamless and trustworthy online transactions for citizens and businesses in Norway.
+uuid: 1c902e81-8e00-44c3-a93a-7f16aad0ce26
+domains:
+    - 22julisenteret.no
+    - 22julycentre.no
+    - blankholmutvalget.no
+    - dagligvaretilsynet.no
+    - dep-cert.no
+    - depcert.no
+    - depkatalog.no
+    - distriktsnæringsutvalget.no
+    - distriktsnaringsutvalget.no
+    - dss-cert.no
+    - dsscert.no
+    - ececthenordicway.no
+    - eierskapskonferansen.no
+    - eosnotat.no
+    - govnor.no
+    - gronnkonkurransekraft.no
+    - helsedepartementet.no
+    - helseforsk.no
+    - helsekonferansen.no
+    - helseogomsorgsdepartementet.no
+    - hod-utvalg.no
+    - hod.dep.no
+    - hoddep.no
+    - idahotoslo2019.no
+    - klagenemndsekretariatet.no
+    - klagenemndssekretariatet.no
+    - kvartalsposten.no
+    - liedutvalget.no
+    - lilledoffin.no
+    - lvph.no
+    - marintmiljo.no
+    - minidoffin.no
+    - nasjonalhelseplan.no
+    - nicfi.no
+    - nordicbalticmdb2020.no
+    - norgemot2025.no
+    - opplaringslovutvalget.no
+    - opptrappingsplan.no
+    - rusplan.no
+    - rusreformutvalget.no
+    - schengennotat.no
+    - sikkerreise.no
+    - snowpark.no
+    - sykehusplan.no
+    - sykehusreformen.no
+    - testdep.no
+    - universitetsoghoyskolelovutvalget.no
+    - verdighetsgarantien.no
+    - videodep.no
