@@ -49,7 +49,6 @@ domains:
     - dolen.no
     - drangedalsposten.no
     - driva.no
-    - dplay.no
     - dt.no
     - e24.no
     - eikerbladet.no
@@ -202,6 +201,7 @@ domains:
     - steinkjer24.no
     - strandbuen.no
     - strilen.no
+    - subjekt.no
     - suldalsposten.no
     - sunnhordland.no
     - svalbardposten.no
