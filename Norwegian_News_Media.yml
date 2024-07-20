@@ -7,67 +7,133 @@ domains:
     - aftenbladet.no
     - aftenposten.no
     - agderposten.no
+    - aasavis.no
     - altaposten.no
+    - alvdalmiv.no
+    - amta.no
     - an.no
+    - andalsnes-avis.no
+    - ao.no
+    - auraavis.no
+    - austagderblad.no
+    - av-avis.no
     - avisa-hordaland.no
     - avisa-st.no
+    - avisa-valdres.no
+    - avisenagder.no
     - ba.no
+    - banett.no
     - barnehage.no
     - bilnorge.no
     - bladet.no
+    - blv.no
     - bodøposten.no
     - bt.no
     - budstikka.no
     - bygg.no
+    - bygdebladet.no
+    - bygdanytt.no
+    - costume.no
     - cw.no
     - dagbladet.no
+    - dagen.no
     - dagensmedisin.no
     - dagensperspektiv.no
+    - dalane-tidende.no
     - dagsavisen.no
     - digi.no
     - dinepenger.no
     - dinside.no
     - discoveryplus.no
     - dn.no
-    - dplay.no
+    - dolen.no
+    - drangedalsposten.no
+    - driva.no
     - dt.no
     - e24.no
+    - eikerbladet.no
+    - elbil24.no
+    - enebakkavis.no
+    - eub.no
     - eurosport.no
     - f-b.no
     - faktisk.no
     - finansavisen.no
+    - finnmarksposten.no
     - firda.no
+    - firdaposten.no
     - fiskeribladet.no
+    - fjordabladet.no
+    - fjordingen.no
+    - fjt.no
+    - fjuken.no
     - folkebladet.no
     - forskning.no
+    - fosna-folket.no
+    - framtidinord.no
     - fremover.no
     - frifagbevegelse.no
+    - frostingen.no
     - fvn.no
     - gamer.no
     - gamereactor.no
+    - gat.no
+    - gbnett.no
+    - gd.no
+    - gjengangeren.no
     - glomdalen.no
+    - godt.no
     - h-a.no
     - h-avis.no
     - ha-halden.no
-    - hegnar.no
+    - hadeland.no
+    - hallingdolen.no
+    - hardanger-folkeblad.no
+    - hblad.no
     - helg.no
+    - hf.no
+    - hitra-froya.no
     - ht.no
+    - hyttavaar.no
+    - ialta.no
     - ifinnmark.no
+    - ilevanger.no
+    - inderoyningen.no
+    - indre.no
     - innherred.no
+    - intrafish.no
+    - isandnessjoen.no
     - itavisen.no
     - itromso.no
+    - jarlsbergavis.no
+    - jbl.no
     - journalisten.no
+    - kirkenesby.no
     - khrono.no
     - kk.no
     - klartale.no
     - klassekampen.no
     - klikk.no
     - kommunal-rapport.no
+    - kode24.no
+    - kv.no
+    - kvinnheringen.no
     - laagendalsposten.no
+    - l-a.no
+    - lierposten.no
+    - lister24.no
+    - lokal-avisa.no
+    - lp.no
     - lofotposten.no
+    - lofot-tidende.no
     - lydogbilde.no
+    - lyngdalsavis.no
     - m24.no
+    - mitthammerfest.no
+    - mittjessheim.no
+    - mittlillestrom.no
     - minervanett.no
+    - mn24.no
     - montages.no
     - morenytt.no
     - morgenbladet.no
@@ -78,48 +144,103 @@ domains:
     - nationen.no
     - nettavisen.no
     - newsinenglish.no
+    - nidaros.no
+    - noblad.no
+    - nord24.no
+    - norddalen.no
+    - nordhordland.no
     - nordlys.no
+    - nordnorskdebatt.no
     - nrk.no
     - nrkbeta.no
     - nrksuper.no
+    - nt24.no
     - ntb.no
+    - ostlendingen.no
+    - nye-troms.no
     - oa.no
     - oblad.no
     - op.no
-    - ostlendingen.no
+    - opp.no
+    - osogfusa.no
+    - oyene.no
     - p3.no
     - p4.no
+    - pd.no
     - pressfire.no
+    - r-a.no
+    - rablad.no
     - ranablad.no
+    - raumnes.no
     - rb.no
     - rbnett.no
+    - retten.no
+    - rha.no
     - ringblad.no
+    - ringsaker-blad.no
     - rogalandsavis.no
     - sa.no
+    - saltenposten.no
+    - sandeavis.no
+    - sandnesposten.no
     - sb.no
+    - seher.no
+    - setesdolen.no
     - shifter.no
     - side2.no
     - smaalenene.no
     - smp.no
+    - snasningen.no
+    - sognavis.no
     - sol.no
+    - solabladet.no
+    - stangeavisa.no
+    - startsida.no
+    - startsiden.no
+    - steinkjer-avisa.no
+    - steinkjer24.no
+    - strandbuen.no
+    - strilen.no
+    - subjekt.no
+    - suldalsposten.no
+    - sunnhordland.no
     - svalbardposten.no
     - sykepleien.no
+    - svelviksposten.no
     - t-a.no
     - ta.no
     - tb.no
     - tek.no
+    - telen.no
     - thelocal.no
     - tk.no
     - tnp.no
-    - tu.no
+    - totenidag.no
+    - tromsoby.no
+    - tronderbladet.no
+    - tronderdebatt.no
     - tv2.no
+    - tvedestrandsposten.no
+    - tu.no
+    - tynsetingen.no
+    - tysnesbladet.no
     - ung.no
     - utrop.no
     - varden.no
+    - varingen.no
+    - venneslatidende.no
+    - vestbyavis.no
+    - vestlandsnytt.no
+    - vestnytt.no
+    - vestviken24.no
     - vg.no
-    - vgd.no
-    - vglive.no
-    - vgtv.no
     - viaplay.no
+    - vigga.no
+    - vikebladet.no
     - vl.no
+    - vp.no
     - vol.no
+    - vredens-gnag.no
+    - vtb.no
+    - ytringen.no
+    - nyss.no
