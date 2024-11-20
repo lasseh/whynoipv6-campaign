@@ -1,5 +1,6 @@
 title: Mastodon Servers
 description: Mastodon is a federated social media network. Users create an account on one of these servers, and the servers intercommunicate to allow people to connect with people on different servers.
+uuid: 10b2d058-a98f-4a31-b602-3f3081c3eaa7
 domains:
   - mastodon.social
   - mstdn.jp
