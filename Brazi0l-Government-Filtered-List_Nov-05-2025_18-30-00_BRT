@@ -1,6 +1,7 @@
-title: Brazilian Government Websites - Official list
-description: Official list of websites utilizing the "gov.br" domain. Database updates daily, last download in Sept. 01, 2025 18:30:00 BRT (UTC-3) - Available in https://dados.gov.br/dados/conjuntos-dados/dominios-govbr
-domains 
+title: Brazilian Government Websites
+description: Official list of websites utilizing the "gov.br" domain.
+uuid:
+domains: 
   - mercosul.gov.br
   - e-post.gov.br
   - mdr.gov.br
