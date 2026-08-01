@@ -1,6 +1,7 @@
 title: Norwegian Government Agencies and Directorates
 description: Norwegian government agencies and directorates responsible for various sectors, including health, environment, transportation, and education.
 uuid: cf44698c-0f4c-4791-b499-408f3a069cf6
+tags: [mandate]
 domains:
     - arbeidstilsynet.no
     - bufdir.no

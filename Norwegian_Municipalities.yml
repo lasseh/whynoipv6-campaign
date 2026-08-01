@@ -1,6 +1,7 @@
 title: Norwegian Municipalities
 description: Norwegian municipalities, including local government websites that provide information on public services, administration, and community resources.
 uuid: 4cff6f14-cfcd-48ea-b8f6-be2e7aa75800
+tags: [mandate]
 domains:
     - aal.kommune.no
     - afjord.kommune.no
@@ -371,4 +372,3 @@ domains:
     - voss.herad.no
     - voss.kommune.no
     - hvaler.kommune.no
-    - kvam.no
