@@ -1,0 +1,8 @@
+subdomains:
+  - dash
+  - api
+  - developers
+  - blog
+  - community
+  - radar
+  - workers

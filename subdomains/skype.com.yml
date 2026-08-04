@@ -1,0 +1,6 @@
+subdomains:
+  - web
+  - login
+  - secure
+  - support
+  - go

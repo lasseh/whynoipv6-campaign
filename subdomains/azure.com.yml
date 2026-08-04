@@ -1,0 +1,6 @@
+subdomains:
+  - portal
+  - shell
+  - docs
+  - account
+  - status

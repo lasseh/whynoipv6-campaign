@@ -1,0 +1,9 @@
+subdomains:
+  - api
+  - mobile
+  - help
+  - ads
+  - developer
+  - business
+  - upload
+  - blog

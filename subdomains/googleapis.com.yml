@@ -1,0 +1,7 @@
+subdomains:
+  - fonts
+  - ajax
+  - maps
+  - storage
+  - oauth2
+  - translate

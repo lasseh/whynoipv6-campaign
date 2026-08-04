@@ -1,0 +1,13 @@
+subdomains:
+  - tv
+  - radio
+  - innlogging
+  - profil
+  - psapi
+  - static
+  - gfx
+  - podkast
+  - undertekst
+  - mediaorigin
+  - lyd
+  - cast

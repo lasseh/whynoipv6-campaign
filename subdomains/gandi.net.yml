@@ -1,0 +1,8 @@
+subdomains:
+  - admin
+  - api
+  - id
+  - shop
+  - help
+  - news
+  - docs

@@ -1,0 +1,9 @@
+subdomains:
+  - api
+  - gist
+  - codeload
+  - docs
+  - support
+  - education
+  - resources
+  - skills

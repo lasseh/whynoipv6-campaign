@@ -1,0 +1,14 @@
+subdomains:
+  - accounts
+  - mail
+  - drive
+  - docs
+  - maps
+  - photos
+  - play
+  - calendar
+  - meet
+  - chat
+  - news
+  - translate
+  - support

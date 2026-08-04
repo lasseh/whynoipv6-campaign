@@ -1,0 +1,5 @@
+subdomains:
+  - login
+  - account
+  - profile
+  - storage
