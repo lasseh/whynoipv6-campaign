@@ -53,7 +53,7 @@ That is the whole format. The full key list:
 | `description` | yes | One line, shown under the title |
 | `domains` | yes | Bare hostnames, up to 5000 per file |
 | `tags` | no | Lowercase kebab-case, up to 16. The tag `mandate` is the only one with behaviour attached — it lists the campaign under [/mandates](https://whynoipv6.com/mandates) |
-| `uuid` | no | Leave it out. CI rejects a hand-written one and assigns the real one after merge |
+| `uuid` | no | Leave it out. I assign it after merging — a hand-written value can collide with an existing campaign and get both files rejected |
 
 What the importer rejects:
 
@@ -120,8 +120,7 @@ cd whynoipv6/backend && go build -o bin/v6ctl ./cmd/v6ctl
 ```
 
 It never touches the network or a database, and exit 0 means every blocking
-check passed. Skipping it is fine — CI runs the same command on every pull
-request and posts the result as a comment.
+check passed. Skipping it is fine; I run the same checks before merging.
 
 ## Not comfortable with a pull request?
 

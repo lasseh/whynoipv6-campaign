@@ -2,8 +2,8 @@
 #
 # Every root-level campaign file carries a `uuid:` the importer keys on — it,
 # not the filename or the title, is the campaign's identity. Contributors leave
-# the field out; .github/workflows/assign-uuid.yml runs `fix-uuids` after merge
-# and gates the result with `check-uuids`.
+# the field out; run `make all` after merging a campaign PR to assign what is
+# missing and verify the result before pushing.
 
 CAMPAIGN_FILES := $(wildcard *.yml *.yaml)
 
