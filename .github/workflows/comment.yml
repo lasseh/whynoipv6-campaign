@@ -1,0 +1,37 @@
+# Posts validate.yml's summary on the pull request. It runs as a separate
+# workflow_run so it holds a write token even when the pull request came from
+# a fork, where the validate run itself cannot comment.
+#
+# workflow_run only fires from the default branch, so changes here take effect
+# once merged — a pull request cannot exercise this file.
+name: validate-comment
+
+on:
+  workflow_run:
+    workflows: [validate]
+    types: [completed]
+
+permissions:
+  actions: read # read the artifact off the validate run
+  pull-requests: write
+
+jobs:
+  comment:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: validation-comment
+          path: ci-out
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: post or update the bot comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment "$(cat ci-out/pr-number)" \
+            --repo "$GITHUB_REPOSITORY" \
+            --body-file ci-out/comment.md \
+            --edit-last --create-if-none

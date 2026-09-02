@@ -1,0 +1,56 @@
+# Validates the campaign and subdomain files a pull request touches, using the
+# same parser the importer runs (v6ctl campaign validate, built from the
+# backend repo). No database, no network lookups, no write access — the bot
+# comment is posted by comment.yml, because a pull request from a fork gets a
+# read-only token no matter what this file asks for.
+name: validate
+
+on:
+  pull_request:
+    paths:
+      - '*.yml'
+      - '*.yaml'
+      - 'subdomains/*.yml'
+      - 'subdomains/*.yaml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # the uuid rules diff each file against the base branch
+
+      - uses: actions/checkout@v7
+        with:
+          repository: lasseh/whynoipv6
+          path: .backend
+          persist-credentials: false
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version: stable
+          cache-dependency-path: .backend/backend/go.sum
+
+      - name: build v6ctl
+        run: cd .backend/backend && go build -o /tmp/v6ctl ./cmd/v6ctl
+
+      - name: validate changed campaign and subdomain files
+        run: |
+          mkdir -p ci-out
+          echo "${{ github.event.pull_request.number }}" > ci-out/pr-number
+          /tmp/v6ctl campaign validate \
+            --repo . \
+            --base "origin/${{ github.base_ref }}" \
+            --comment-file ci-out/comment.md
+
+      - name: hand the summary to the commenting workflow
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: validation-comment
+          path: ci-out/
+          if-no-files-found: error
