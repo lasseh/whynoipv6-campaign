@@ -20,7 +20,10 @@ jobs:
     if: github.event.workflow_run.event == 'pull_request'
     runs-on: ubuntu-latest
     steps:
+      # A validate run that died before writing the summary leaves nothing to
+      # download; that failure is already visible on the pull request.
       - uses: actions/download-artifact@v8
+        continue-on-error: true
         with:
           name: validation-comment
           path: ci-out
@@ -31,6 +34,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          if [ ! -s ci-out/comment.md ]; then
+            echo "validate produced no summary — nothing to post"
+            exit 0
+          fi
           gh pr comment "$(cat ci-out/pr-number)" \
             --repo "$GITHUB_REPOSITORY" \
             --body-file ci-out/comment.md \

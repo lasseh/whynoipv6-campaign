@@ -53,4 +53,3 @@ jobs:
         with:
           name: validation-comment
           path: ci-out/
-          if-no-files-found: error
