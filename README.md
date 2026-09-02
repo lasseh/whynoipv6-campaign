@@ -133,3 +133,13 @@ with the title, a one-line description and the list of domains, and I will add i
 - [lasseh/whynoipv6](https://github.com/lasseh/whynoipv6) — crawler, API and web frontend
 - [whynoipv6.com](https://whynoipv6.com) — the site
 - [api.whynoipv6.com/docs](https://api.whynoipv6.com/docs) — the public API
+
+## Contributors
+
+Campaigns, corrections and subdomain lists arrive as pull requests.
+
+<div align="center">
+  <a href="https://github.com/lasseh/whynoipv6-campaign/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=lasseh/whynoipv6-campaign" alt="Contributors to lasseh/whynoipv6-campaign" />
+  </a>
+</div>
