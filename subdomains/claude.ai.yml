@@ -1,0 +1,5 @@
+subdomains:
+  - downloads
+  - assets
+  - pivot
+  - a-cdn
