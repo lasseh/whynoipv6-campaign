@@ -1,0 +1,8 @@
+subdomains:
+  - api
+  - atendimento
+  - cadastro
+  - experiencia
+  - portal
+  - trader
+  - web
