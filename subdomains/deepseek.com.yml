@@ -1,0 +1,9 @@
+subdomains:
+  - api
+  - cdn
+  - chat
+  - download
+  - files
+  - platform
+  - static
+  - status

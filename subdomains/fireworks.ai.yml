@@ -1,0 +1,5 @@
+subdomains:
+  - app
+  - developer
+  - docs
+  - status

@@ -1,0 +1,8 @@
+subdomains:
+  - academy
+  - api
+  - api.os
+  - dashboard
+  - docs
+  - shop
+  - status

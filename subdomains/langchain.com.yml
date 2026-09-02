@@ -1,0 +1,10 @@
+subdomains:
+  - api.hub
+  - api.js
+  - auth
+  - auth.fs
+  - blog
+  - changelog
+  - chat
+  - studio
+  - support

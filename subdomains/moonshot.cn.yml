@@ -1,0 +1,6 @@
+subdomains:
+  - api
+  - chat
+  - login
+  - platform
+  - status

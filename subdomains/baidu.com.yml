@@ -1,0 +1,17 @@
+subdomains:
+  - api
+  - api.su
+  - auth
+  - chat
+  - developer
+  - developers
+  - doc
+  - download
+  - help
+  - images
+  - img
+  - media
+  - media.learn
+  - pay
+  - static
+  - store

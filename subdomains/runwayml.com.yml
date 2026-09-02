@@ -1,0 +1,12 @@
+subdomains:
+  - academy
+  - api
+  - app
+  - auth
+  - blog
+  - docs
+  - help
+  - learn
+  - status
+  - store
+  - support

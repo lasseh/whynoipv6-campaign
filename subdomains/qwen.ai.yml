@@ -1,0 +1,6 @@
+subdomains:
+  - api
+  - auth
+  - chat
+  - download
+  - portal

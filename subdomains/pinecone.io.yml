@@ -1,0 +1,5 @@
+subdomains:
+  - api
+  - docs
+  - status
+  - support

@@ -1,0 +1,5 @@
+subdomains:
+  - api
+  - app
+  - cdn
+  - docs

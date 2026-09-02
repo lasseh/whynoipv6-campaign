@@ -1,0 +1,5 @@
+subdomains:
+  - api
+  - api.endpoints
+  - console
+  - doc

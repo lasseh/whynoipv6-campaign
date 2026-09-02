@@ -1,0 +1,6 @@
+subdomains:
+  - api
+  - changelog
+  - docs
+  - playground
+  - status
