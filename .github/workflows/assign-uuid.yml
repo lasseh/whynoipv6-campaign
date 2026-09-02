@@ -1,4 +1,4 @@
-# Assigns a uuid to every campaign file that reached master without one, and
+# Assigns a uuid to every campaign file that reached main without one, and
 # commits it back. The repo owns campaign identity: the importer keys campaigns
 # on the uuid in the file, so it has to be minted here rather than invented by
 # a contributor (validate.yml rejects that) or by the database.
@@ -10,7 +10,7 @@ name: assign-uuid
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - '*.yml'
       - '*.yaml'
