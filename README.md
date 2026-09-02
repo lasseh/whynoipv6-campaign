@@ -6,70 +6,129 @@
   </picture>
 </div>
 <br>
-<br>
 <div align="center">
 
-[![License](https://img.shields.io/github/license/lasseh/whynoipv6)](#license)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fwhynoipv6.com)](https://whynoipv6.com/)
-[![Issues - whynoipv6](https://img.shields.io/github/issues/lasseh/whynoipv6)](https://github.com/lasseh/whynoipv6/issues)
-[![Github status](https://img.shields.io/badge/Github_IPv6-Missing-red?logo=github)](https://whynoipv6.com/domain/github.com/)
+[![Campaigns](https://img.shields.io/badge/campaigns-whynoipv6.com-blue)](https://whynoipv6.com/campaigns)
+[![Backend](https://img.shields.io/badge/backend-lasseh%2Fwhynoipv6-lightgrey?logo=github)](https://github.com/lasseh/whynoipv6)
 
 </div>
-<h1 align="center">Shame as a Service</h1>
+<h1 align="center">Campaign lists</h1>
 <div align="center">
-Shaming the largest websites in the world lacking IPv6 support.
+The domains WhyNoIPv6.com tracks beyond the Tranco top 1M.
 </div>
-</br>
-<p align="center">
-    <a href="https://github.com/lasseh/whynoipv6/issues/new?assignees=lasseh&labels=bug&projects=&template=bug_report.md&title=%F0%9F%90%9B+Bug+Report%3A+">Report Bug</a>
-    ·
-    <a href="https://github.com/lasseh/whynoipv6/issues/new?assignees=lasseh&labels=enhancement&projects=&template=feature_request.md&title=%F0%9F%9A%80+Feature%3A+">Request Feature</a>
-    ·
-    <a href="https://twitter.com/WhyNoIPv6">Twitter</a>
-  </p>
 
-<div align="center"><img src="https://raw.githubusercontent.com/lasseh/whynoipv6/master/.github/images/github-status.png"></div>
+---
 
-## What is WhyNoIPv6.com?
-WhyNoIPv6.com is a specialized platform committed to monitoring and promoting the adoption of IPv6 among the 1 Million top-ranked websites and user-submitted campaigns. We offer insightful metrics to help you assess the current landscape of IPv6 implementation.
+[whynoipv6.com](https://whynoipv6.com) crawls the Tranco top 1 million on its own.
+This repo is everything else it watches, and it is open to pull requests.
 
-## Why is IPv6 Important?
-IPv6 is not merely an upgrade; it's a fundamental pillar for the Internet's sustainable future. As we edge closer to exhausting the IPv4 address space, the immense address capacity of IPv6 becomes indispensable. Beyond the scalability, IPv6 brings along robust security protocols and superior performance, making it the linchpin for modern, efficient, and secure internet communications.
+| Path | What it is |
+|---|---|
+| `<Campaign_Name>.yml` (repo root) | A campaign — a named group of domains with its own page, stats and changelog |
+| `subdomains/<apex>.yml` | Extra hosts to check under a domain that is already tracked |
 
-Failing to adopt IPv6 is tantamount to inhibiting the Internet's evolution. For top websites, this isn't just negligence—it's an abdication of their role as industry leaders. That's why our mission at WhyNoIPv6.com is not just to monitor, but to actively push for the closing of these alarming gaps in IPv6 adoption.
+Merged changes reach production on the next daily sync, and the domains in them
+are crawled every 24 hours from there on.
 
-## How does WhyNoIPv6.com work?
-At WhyNoIPv6.com, we meticulously scan each domain from Tranco's top-ranked list every 3 days to evaluate critical IPv6 adoption metrics. Specifically, we check for the existence of IPv6 DNS records and MX records. The data gleaned from these scans is then aggregated, analyzed, and made publicly available, providing a comprehensive and up-to-date snapshot of IPv6 implementation across influential websites.
+## Add a campaign
 
-## Tranco?
-The [Tranco List](https://tranco-list.eu/) offers an alternative way to gauge a website's standing on the internet, diverging from traditional metrics such as those provided by Alexa rankings. Unlike Alexa, which ranks websites based on a combination of average daily visitors and pageviews over a three-month period, the Tranco List employs a robust methodology that aggregates data from various sources to compile its rankings.
+One file at the repo root. Name it after the campaign, use `.yml`, and give it
+these keys:
 
-This approach aims to provide a more comprehensive and reliable measure of a website's popularity and traffic, addressing some of the accuracy concerns associated with Alexa's data. As a result, the Tranco List is increasingly recognized as a valuable tool for understanding website prominence in a way that accounts for a broader spectrum of internet activity.
+```yaml
+title: Norwegian Political Parties
+description: Official websites of Norway's political parties
+domains:
+  - arbeiderpartiet.no
+  - frp.no
+  - hoyre.no
+```
 
-## Crawler
-The crawler uses 1.1.1.1 as nameserver and will check for ipv6 records on domain.com, wwww.domain.com, ns and mx records.
-It will check each domain every 3 days.
+That is the whole format. The full key list:
 
-## Campaigns
-In addition to displaying the IPv6 status of the top 1 million domains, WhyNoIPv6.com also has a campaign feature that encourages users to create their own lists of domains to check and shame. This feature allows users to generate their own personalized list of domains and monitor their IPv6 adoption progress. Users can also share their lists on social media to spread awareness about the importance of IPv6 adoption and encourage more websites to adopt IPv6. By empowering users to create their own lists, WhyNoIPv6.com aims to create a community-driven effort to promote IPv6 adoption and help build a more resilient and future-proof Internet.
-To create a campaign, create a new issue here: https://github.com/lasseh/whynoipv6-campaign
+| Key | Required | Notes |
+|---|---|---|
+| `title` | yes | The campaign name on the site |
+| `description` | yes | One line, shown under the title |
+| `domains` | yes | Bare hostnames, up to 5000 per file |
+| `tags` | no | Lowercase kebab-case, up to 16. The tag `mandate` is the only one with behaviour attached — it lists the campaign under [/mandates](https://whynoipv6.com/mandates) |
+| `uuid` | no | Leave it out. UUIDs are assigned by the import bot; a hand-written one forks your campaign into a second entry |
 
-## Repositories
-The complete project consists of 3 repo's, check them out here:  
-[WhyNoIPv6 Backend](https://github.com/lasseh/whynoipv6)  
-[WhyNoIPv6 Frontend](https://github.com/lasseh/whynoipv6-web)  
-[WhyNoIPv6 Campaigns](https://github.com/lasseh/whynoipv6-campaign)  
+What the importer rejects:
 
-## Contributors
-<a href="https://github.com/lasseh">
-  <img src="https://github.com/lasseh.png?size=50">
-</a>
-<a href="https://github.com/aulonm">
-  <img src="https://github.com/aulonm.png?size=50">
-</a>
-<a href="https://github.com/joms">
-  <img src="https://github.com/joms.png?size=50">
-</a>
-<a href="https://github.com/sklirg">
-  <img src="https://github.com/sklirg.png?size=50">
-</a>
+- Anything that is not a bare hostname. Write `example.com`, not
+  `https://example.com/` or `example.com/login`. Non-ASCII names are fine and
+  get converted to punycode.
+- The same host twice in one file.
+- More than 5000 entries.
+- Unknown top-level keys.
+
+One bad entry rejects the whole file, so a merged campaign is either fully
+imported or not imported at all.
+
+Two things that look like problems and are not: subdomains in a campaign list
+(`api.example.com` is fine — its parent gets tracked automatically), and the
+same host appearing in several campaigns. One domain can belong to many
+campaigns and is still crawled once a day.
+
+## Add a subdomain list
+
+An apex and its `www` passing does not mean the service works over IPv6. Login
+portals, APIs and checkout hosts live on subdomains that can be IPv4-only while
+the homepage scores green. A subdomain list names those hosts so the crawler
+checks them too.
+
+```yaml
+# subdomains/nrk.no.yml
+subdomains:
+  - tv
+  - radio
+  - secure.login
+```
+
+- The filename is the parent domain, lowercase, and must be a registrable apex —
+  `nrk.no.yml`, not `www.nrk.no.yml` and not `no.yml`.
+- Entries are labels **relative to that apex**, so write `tv`, not `tv.nrk.no`.
+  Multi-level labels like `secure.login` work.
+- `www` is rejected — the apex's own `www` check already covers it.
+- Up to 20 entries, no duplicates, one file per domain.
+- The apex has to be tracked already, through Tranco or a campaign. A list for an
+  unknown domain is skipped, not an error.
+
+These hosts show up under the parent domain on the site and are checked like any
+other domain. They are deliberately **informational**: they never change the
+parent's grade. Coverage here is uneven by construction, and a domain should not
+score worse just because someone bothered to list its API host.
+
+## Removing things
+
+Delete the entry, or the file. Nothing is deleted from the database on merge —
+hosts that stop being listed enter a 30-day grace period and are delisted after
+it, so re-adding something within the month costs nothing. Deleting a campaign
+file retires the campaign and keeps its history.
+
+## Checking your file before you open a PR
+
+The importer's rules are enforced by `v6ctl campaign validate`, which runs
+offline against a checkout:
+
+```sh
+git clone https://github.com/lasseh/whynoipv6
+cd whynoipv6/backend && go build -o bin/v6ctl ./cmd/v6ctl
+./bin/v6ctl campaign validate --repo /path/to/whynoipv6-campaign
+```
+
+It never touches the network or a database, and exit 0 means every blocking
+check passed. Skipping it is fine; I run the same checks before merging.
+
+## Not comfortable with a pull request?
+
+[Open an issue](https://github.com/lasseh/whynoipv6-campaign/issues/new?template=new-campaign.md)
+with the title, a one-line description and the list of domains, and I will add it.
+
+## The rest of the project
+
+- [lasseh/whynoipv6](https://github.com/lasseh/whynoipv6) — crawler, API and web frontend
+- [whynoipv6.com](https://whynoipv6.com) — the site
+- [api.whynoipv6.com/docs](https://api.whynoipv6.com/docs) — the public API
