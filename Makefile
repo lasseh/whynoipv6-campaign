@@ -3,7 +3,8 @@
 # Every file in campaigns/ carries a `uuid:` the importer keys on — it, not the
 # filename or the title, is the campaign's identity. Contributors leave
 # the field out; run `make all` after merging a campaign PR to assign what is
-# missing and verify the result before pushing.
+# missing and verify the result before pushing. `make install-hooks` puts that
+# verification in a pre-push hook so a forgotten `make all` cannot reach origin.
 
 CAMPAIGN_FILES := $(wildcard campaigns/*.yml campaigns/*.yaml)
 
@@ -11,7 +12,7 @@ CAMPAIGN_FILES := $(wildcard campaigns/*.yml campaigns/*.yaml)
 # well-formed UUID, not v4 specifically, so a preserved uuid never fails here.
 UUID_RE := ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$$
 
-.PHONY: all help check-uuids fix-uuids
+.PHONY: all help check-uuids fix-uuids install-hooks
 
 # Assign what is missing, then verify everything.
 all: fix-uuids check-uuids
@@ -21,6 +22,12 @@ help:
 	@echo "  make all          - assign missing UUIDs, then check every file"
 	@echo "  make fix-uuids    - assign a UUID to every campaign file lacking one"
 	@echo "  make check-uuids  - verify every campaign file has a unique, well-formed UUID (exit 1 on failure)"
+	@echo "  make install-hooks - run check-uuids from a pre-push hook (local config, once per clone)"
+
+# Local config, never versioned, so it only ever applies to this clone.
+install-hooks:
+	@git config core.hooksPath .githooks
+	@echo "core.hooksPath -> .githooks"
 
 # Blocking: missing, malformed, or shared UUIDs all exit 1. A shared uuid is
 # worth catching here because sync's duplicate guard skips *both* files.

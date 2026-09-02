@@ -1,0 +1,24 @@
+#!/bin/sh
+# Blocks a push that would land campaign files without a valid uuid.
+#
+# Install with `make install-hooks`; bypass a single push with --no-verify.
+set -e
+
+cd "$(git rev-parse --show-toplevel)"
+
+# check-uuids reads the working tree, so a dirty campaigns/ means its verdict
+# says nothing about the commits being pushed — the uuids `make all` just
+# assigned are the exact thing that gets left behind uncommitted.
+dirty=$(git status --porcelain -- campaigns subdomains)
+if [ -n "$dirty" ]; then
+	echo "pre-push: uncommitted changes under campaigns/ or subdomains/:" >&2
+	echo "$dirty" >&2
+	echo "pre-push: commit them, then push again." >&2
+	exit 1
+fi
+
+if ! output=$(make check-uuids 2>&1); then
+	echo "$output" | grep '^FAIL' >&2 || echo "$output" >&2
+	echo "pre-push: run 'make all', commit the assigned uuids, then push again." >&2
+	exit 1
+fi
