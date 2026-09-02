@@ -25,7 +25,7 @@ This repo is everything else it watches, and it is open to pull requests.
 
 | Path | What it is |
 |---|---|
-| `<Campaign_Name>.yml` (repo root) | A campaign — a named group of domains with its own page, stats and changelog |
+| `campaigns/<Campaign_Name>.yml` | A campaign — a named group of domains with its own page, stats and changelog |
 | `subdomains/<apex>.yml` | Extra hosts to check under a domain that is already tracked |
 
 Merged changes reach production on the next daily sync, and the domains in them
@@ -33,10 +33,11 @@ are crawled every 24 hours from there on.
 
 ## Add a campaign
 
-One file at the repo root. Name it after the campaign, use `.yml`, and give it
+One file in `campaigns/`. Name it after the campaign, use `.yml`, and give it
 these keys:
 
 ```yaml
+# campaigns/Norwegian_Political_Parties.yml
 title: Norwegian Political Parties
 description: Official websites of Norway's political parties
 domains:

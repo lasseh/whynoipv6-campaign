@@ -1,11 +1,11 @@
 # Campaign UUID tooling.
 #
-# Every root-level campaign file carries a `uuid:` the importer keys on — it,
-# not the filename or the title, is the campaign's identity. Contributors leave
+# Every file in campaigns/ carries a `uuid:` the importer keys on — it, not the
+# filename or the title, is the campaign's identity. Contributors leave
 # the field out; run `make all` after merging a campaign PR to assign what is
 # missing and verify the result before pushing.
 
-CAMPAIGN_FILES := $(wildcard *.yml *.yaml)
+CAMPAIGN_FILES := $(wildcard campaigns/*.yml campaigns/*.yaml)
 
 # The shape the importer accepts (internal/campaign/parse.go uuidRe) — any
 # well-formed UUID, not v4 specifically, so a preserved uuid never fails here.
