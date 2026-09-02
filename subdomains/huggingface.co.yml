@@ -1,0 +1,7 @@
+subdomains:
+  - api.endpoints
+  - datasets-server
+  - router
+  - status
+  - store
+  - support.endpoints
