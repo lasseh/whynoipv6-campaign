@@ -1,8 +1,8 @@
 <br/>
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lasseh/whynoipv6/master/.github/images/Github-logo-white.png">
-    <img alt="Shame!" src="https://raw.githubusercontent.com/lasseh/whynoipv6/master/.github/images/Github-logo-black.png" width="70%">
+    <source media="(prefers-color-scheme: dark)" srcset=".github/images/github-logo-dark.webp">
+    <img alt="Why No IPv6: Shame as a Service" src=".github/images/github-logo-light.webp">
   </picture>
 </div>
 <br>
