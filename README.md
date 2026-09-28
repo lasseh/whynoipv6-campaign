@@ -29,7 +29,8 @@ This repo is everything else it watches, and it is open to pull requests.
 | `subdomains/<apex>.yml` | Extra hosts to check under a domain that is already tracked |
 
 Merged changes reach production on the next daily sync, and the domains in them
-are crawled every 24 hours from there on.
+are crawled every 24 hours from there on. A new campaign file waits for its
+uuid, which I add right after merging.
 
 ## Add a campaign
 
@@ -122,6 +123,25 @@ cd whynoipv6/backend && go build -o bin/v6ctl ./cmd/v6ctl
 
 It never touches the network or a database, and exit 0 means every blocking
 check passed. Skipping it is fine; I run the same checks before merging.
+
+## Maintainer workflow
+
+Nothing in this repo runs automatically: there is no CI, and the importer only
+reads the checkout. It never writes a uuid and never pushes. A campaign file
+without a uuid is rejected on every sync until it gets one.
+
+1. Before merging a PR, run `v6ctl campaign validate --repo . --base origin/main`
+   on its branch. `--base` limits the checks to the files the PR changed and
+   fails a PR that adds or edits a uuid.
+2. After merging, run `make all`. It gives every campaign file that lacks one a
+   uuid, then checks that every uuid is present, well-formed and unique.
+   Commit what it changed.
+3. Push. `make install-hooks` (once per clone) adds a pre-push hook that blocks
+   the push when uuids are missing or when `campaigns/` or `subdomains/` has
+   uncommitted changes.
+
+`make test` runs the uuid script against fixture files and `make lint` runs
+shellcheck. Run both after changing `scripts/` or the hook.
 
 ## Not comfortable with a pull request?
 
