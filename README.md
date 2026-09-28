@@ -54,7 +54,7 @@ That is the whole format. The full key list:
 | `description` | yes | One line, shown under the title |
 | `domains` | yes | Bare hostnames, up to 5000 per file |
 | `tags` | no | Lowercase kebab-case, up to 16. The tag `mandate` is the only one with behaviour attached — it lists the campaign under [/mandates](https://whynoipv6.com/mandates) |
-| `uuid` | no | Leave it out. I assign it after merging — a hand-written value can collide with an existing campaign and get both files rejected |
+| `uuid` | no | Leave it out. I assign it after merging. A hand-written value can collide with an existing campaign, and the importer then keeps the file it already knows and rejects yours |
 
 What the importer rejects:
 
